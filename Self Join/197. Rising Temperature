@@ -1,0 +1,18 @@
+select w1.id
+from weather w1, weather w2
+where datediff(w1.recordDate, w2.recordDate)=1
+and w1.temperature > w2.temperature
+
+
+=============OR============
+
+SELECT
+    w1.id
+FROM
+    Weather w1      -- First instance of the Weather table, aliased as w1
+JOIN                -- Use JOIN keyword for explicit join syntax
+    Weather w2      -- Second instance of the Weather table, aliased as w2
+ON                  -- Use ON for join conditions
+    DATEDIFF(w1.recordDate, w2.recordDate) = 1
+WHERE
+    w1.temperature > w2.temperature;
