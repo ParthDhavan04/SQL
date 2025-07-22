@@ -1,0 +1,3 @@
+select distinct author_id as id -- as there are duplicates here and id alias is needed
+from views
+where author_id = viewer_id order by author_id
